@@ -1,11 +1,15 @@
 
-#!/bin/bash 
-#importing the data jsonfile
+#!/bin/bash
+#import data of kitty-cats to a file to be read in our bash
+json_file="catfacts.json"
 
-file="catsfacts.json"
+# Bash for getting the breeds of cats 
 
-#Bash for getting the breeds of cats
+jq -r '.[].breed' "$json_file" | while read -r breed;
 
-breed=$(jq -r '.breed' "file")
+do echo "$breed"
 
-echo "$breed"
+done 
+ 
+ 
+ 
