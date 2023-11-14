@@ -1,0 +1,11 @@
+
+#!/bin/bash 
+#importing the data jsonfile
+
+file="catsfacts.json"
+
+#Bash for getting the breeds of cats
+
+breed=$(jq -r '.breed' "file")
+
+echo "$breed"
